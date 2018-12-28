@@ -1,6 +1,6 @@
 var express = require('express'),
     app = express(),
-    port = process.env.PORT || 8081,
+    port = process.env.PORT || 8087,
     bodyParser = require('body-parser');
 
 var todoRoutes = require("./routes/todos");
@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
-    res.sendFile("index.html");
+    res.send("testing");
 });
 
 app.use('/api/todos', todoRoutes);
